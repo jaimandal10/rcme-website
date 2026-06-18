@@ -177,13 +177,40 @@ h3 {
   margin-top: 26px;
 }
 
-.hero-mark {
-  display: grid;
-  place-items: center;
+.hero-photo {
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 24px 70px rgba(127, 13, 20, 0.16);
 }
 
-.hero-mark img {
-  width: min(320px, 70vw);
+.hero-photo img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.home-visual-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.75fr);
+  gap: clamp(24px, 5vw, 64px);
+  align-items: center;
+}
+
+.home-feature-image {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+}
+
+.home-feature-image img {
+  width: 100%;
+  aspect-ratio: 16 / 7;
+  object-fit: cover;
+}
+
+.home-feature-copy {
+  max-width: 560px;
 }
 
 .section,
@@ -450,21 +477,19 @@ tr:last-child td {
     background: var(--white);
   }
 
-  .hero-mark {
-    justify-content: start;
-    padding: 18px;
-    border-radius: 8px;
-    background: var(--soft);
-  }
-
   .feature-grid,
   .faculty-grid,
   .media-grid,
   .media-grid-large,
+  .home-visual-section,
   .content-grid,
   .faculty-row,
   .contact-panel {
     grid-template-columns: 1fr;
+  }
+
+  .home-feature-image img {
+    aspect-ratio: 4 / 3;
   }
 
   .faculty-card {
